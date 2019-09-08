@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="/next-js-core2/dist/next-js-core2.js"></script>
+    <script src="/next-defaults/dist/next-defaults.js"></script>
+    <script src="/next-capitalize/dist/next-capitalize.js"></script>
+    <script src="/next-content-type/dist/next-content-type.js"></script>
+    <script src="/next-param/dist/next-param.js"></script>
+    <script src="/next-data-transform/dist/next-data-transform.js"></script>
+    <script src="/next-json/dist/next-json.js"></script>
+    <script src="/next-xhr/dist/next-xhr.js"></script>
+    <script src="/next-xhr-header/dist/next-xhr-header.js"></script>
+    <script src="/next-ajax/dist/next-ajax.js"></script>
+    <script src="/next-ajax-promise.js"></script>
+  </head>
+  <body>
+    <button id="btn-send">Send Ajax</button>
+    <button id="btn-abort">Abort</button>
+    <script>
+      var btnSend = document.getElementById('btn-send');
+      var btnAbort = document.getElementById('btn-abort');
+      var res;
+
+      btnSend.onclick = function() {
+        console.log('send!');
+        res = nx.AjaxPromise.fetch('get', 'https://api.github.com/users/afeiship').then((res) => {
+          console.log('res', res);
+        });
+
+        console.log(res);
+      };
+
+      btnAbort.onclick = function() {
+        res.destroy();
+      };
+    </script>
+  </body>
+</html>
