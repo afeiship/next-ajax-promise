@@ -32,18 +32,18 @@
       init: function(inMethod, inUrl, inData, inOptions) {
         var self = this;
         var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
+        var id = this.__id__;
         this.ajax = new NxAjax(inMethod, inUrl, inData, inOptions);
 
         if (options.cancelable) {
-          CANCELED_MAP[self.__id__] = function() {
+          CANCELED_MAP[id] = function() {
             self.ajax.destroy();
           };
+          // lazy execute?:
+          Promise.prototype.destroy = function() {
+            (CANCELED_MAP[id] || nx.noop)();
+          };
         }
-
-        // lazy execute?:
-        Promise.prototype.destroy = function() {
-          (CANCELED_MAP[self.__id__] || nx.noop)();
-        };
       }
     }
   });
