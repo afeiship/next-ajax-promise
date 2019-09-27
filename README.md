@@ -17,6 +17,3 @@ import NxAjaxPromise from 'next-ajax-promise';
 
 // code goes here:
 ```
-
-## resources
-- https://github.com/afeiship

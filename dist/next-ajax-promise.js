@@ -1,3 +1,11 @@
+/*!
+ * name: next-ajax-promise
+ * url: https://github.com/afeiship/next-ajax-promise
+ * version: 1.0.0
+ * date: 2019-09-27T09:11:09.412Z
+ * license: MIT
+ */
+
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
@@ -51,3 +59,5 @@
     module.exports = NxAjaxPromise;
   }
 })();
+
+//# sourceMappingURL=next-ajax-promise.js.map
