@@ -7,6 +7,7 @@
 
   var NxAjaxPromise = nx.declare('nx.AjaxPromise', {
     statics: {
+      CANCELED_MAP: CANCELED_MAP,
       fetch: function(inMethod, inUrl, inData, inOptions) {
         var instance = new NxAjaxPromise(inMethod, inUrl, inData, inOptions);
         return new Promise(function(resolve, reject) {
@@ -39,6 +40,7 @@
           };
         }
 
+        // lazy execute?:
         Promise.prototype.destroy = function() {
           (CANCELED_MAP[self.__id__] || nx.noop)();
         };

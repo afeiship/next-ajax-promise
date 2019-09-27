@@ -2,7 +2,7 @@
  * name: next-ajax-promise
  * url: https://github.com/afeiship/next-ajax-promise
  * version: 1.0.0
- * date: 2019-09-27T09:13:25.318Z
+ * date: 2019-09-27T09:22:13.984Z
  * license: MIT
  */
 
@@ -15,6 +15,7 @@
 
   var NxAjaxPromise = nx.declare('nx.AjaxPromise', {
     statics: {
+      CANCELED_MAP: CANCELED_MAP,
       fetch: function(inMethod, inUrl, inData, inOptions) {
         var instance = new NxAjaxPromise(inMethod, inUrl, inData, inOptions);
         return new Promise(function(resolve, reject) {
@@ -47,6 +48,7 @@
           };
         }
 
+        // lazy execute?:
         Promise.prototype.destroy = function() {
           (CANCELED_MAP[self.__id__] || nx.noop)();
         };
