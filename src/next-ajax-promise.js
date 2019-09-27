@@ -31,8 +31,8 @@
     methods: {
       init: function(inMethod, inUrl, inData, inOptions) {
         var self = this;
-        var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         var id = this.__id__;
+        var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         this.ajax = new NxAjax(inMethod, inUrl, inData, inOptions);
 
         if (options.cancelable) {

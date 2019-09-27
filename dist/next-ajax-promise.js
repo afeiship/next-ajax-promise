@@ -2,7 +2,7 @@
  * name: next-ajax-promise
  * url: https://github.com/afeiship/next-ajax-promise
  * version: 1.0.0
- * date: 2019-09-27T09:32:07.348Z
+ * date: 2019-09-27T09:45:21.181Z
  * license: MIT
  */
 
@@ -39,8 +39,8 @@
     methods: {
       init: function(inMethod, inUrl, inData, inOptions) {
         var self = this;
-        var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         var id = this.__id__;
+        var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         this.ajax = new NxAjax(inMethod, inUrl, inData, inOptions);
 
         if (options.cancelable) {
