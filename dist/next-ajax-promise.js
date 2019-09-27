@@ -2,7 +2,7 @@
  * name: next-ajax-promise
  * url: https://github.com/afeiship/next-ajax-promise
  * version: 1.0.0
- * date: 2019-09-27T09:11:09.412Z
+ * date: 2019-09-27T09:13:25.318Z
  * license: MIT
  */
 
@@ -42,8 +42,7 @@
         this.ajax = new NxAjax(inMethod, inUrl, inData, inOptions);
 
         if (options.cancelable) {
-          cancelKey = this.__id__;
-          CANCELED_MAP[this.__id__] = function() {
+          CANCELED_MAP[self.__id__] = function() {
             self.ajax.destroy();
           };
         }

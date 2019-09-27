@@ -34,8 +34,7 @@
         this.ajax = new NxAjax(inMethod, inUrl, inData, inOptions);
 
         if (options.cancelable) {
-          cancelKey = this.__id__;
-          CANCELED_MAP[this.__id__] = function() {
+          CANCELED_MAP[self.__id__] = function() {
             self.ajax.destroy();
           };
         }
